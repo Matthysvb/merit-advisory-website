@@ -1,4 +1,6 @@
 FROM nginx:alpine
-COPY . /usr/share/nginx/html/
-RUN rm -f /usr/share/nginx/html/Dockerfile /usr/share/nginx/html/.gitignore
-EXPOSE 80
+COPY index.html /usr/share/nginx/html/
+COPY logos/ /usr/share/nginx/html/logos/
+COPY nginx.conf /etc/nginx/templates/default.conf.template
+ENV PORT=80
+CMD ["/bin/sh", "-c", "envsubst '${PORT}' < /etc/nginx/templates/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
