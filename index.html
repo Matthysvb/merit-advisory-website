@@ -137,16 +137,51 @@ section{padding:96px 0}
 @media(max-width:900px){.tracks-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.tracks-grid{grid-template-columns:1fr}}
 
+/* MENTOR NETWORK */
+#mentors{background:var(--navy);padding:96px 0}
+#mentors .eyebrow{color:var(--gold)}
+#mentors .s-title{color:var(--white);font-family:'Inter',sans-serif;letter-spacing:-.03em}
+#mentors .s-sub{color:rgba(255,255,255,.6)}
+#mentors .gold-rule{background:var(--gold)}
+.mentor-carousel-wrap{position:relative;margin-top:52px}
+.mentor-carousel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:16px;scrollbar-width:none}
+.mentor-carousel::-webkit-scrollbar{display:none}
+.mentor-card{flex:0 0 320px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--rl);overflow:hidden;scroll-snap-align:start;transition:transform .3s,box-shadow .3s,border-color .3s;cursor:pointer}
+.mentor-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 20px 60px rgba(0,0,0,.45);border-color:rgba(197,160,62,.5)}
+.mentor-card:active{transform:translateY(-4px) scale(1.01)}
+.mentor-card-head{background:rgba(197,160,62,.08);border-bottom:1px solid rgba(197,160,62,.2);padding:22px 24px;display:flex;align-items:center;gap:16px}
+.mentor-avatar{width:52px;height:52px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;color:var(--navy);flex-shrink:0;letter-spacing:-.01em}
+.mentor-meta{flex:1;min-width:0}
+.mentor-name{font-size:15px;font-weight:700;color:var(--white);margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mentor-title{font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mentor-track-badge{display:inline-flex;align-items:center;background:rgba(197,160,62,.18);border:1px solid rgba(197,160,62,.3);color:var(--gold);font-size:9px;font-weight:800;padding:3px 8px;border-radius:3px;letter-spacing:.08em;text-transform:uppercase;margin-top:6px;flex-shrink:0}
+.mentor-card-body{padding:20px 24px}
+.mentor-achievements{list-style:none;display:flex;flex-direction:column;gap:10px}
+.mentor-achievements li{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.55}
+.mentor-achievements li::before{content:'▸';color:var(--gold);flex-shrink:0;font-size:10px;margin-top:2px}
+.mentor-prev{font-size:10.5px;color:rgba(197,160,62,.55);font-weight:600;letter-spacing:.04em;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)}
+.carousel-nav{display:flex;gap:10px;margin-top:28px;justify-content:flex-end}
+.carousel-btn{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;font-family:'Inter',sans-serif}
+.carousel-btn:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.carousel-dots{display:flex;gap:6px;align-items:center;margin-top:20px;justify-content:center}
+.cdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:all .3s;cursor:pointer}
+.cdot.active{width:20px;border-radius:3px;background:var(--gold)}
+
 /* HOW IT WORKS */
 #howitworks{background:var(--cream);padding:96px 0}
-.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
-.step-card{background:var(--white);border-radius:var(--rl);padding:32px 28px;border:1px solid var(--border);position:relative;overflow:hidden}
-.step-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
-.step-num{font-family:'Inter',sans-serif;font-size:3rem;font-weight:800;color:rgba(13,43,78,.1);letter-spacing:-.06em;line-height:1;margin-bottom:14px}
-.step-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:10px}
-.step-title-cn{font-family:'Noto Sans SC',sans-serif;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:8px}
-.step-desc{font-size:13px;color:var(--gray);line-height:1.7}
-.step-desc-cn{font-family:'Noto Sans SC',sans-serif;font-size:12px;color:var(--gray);line-height:1.85}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.step-card{background:var(--white);border-radius:var(--rl);padding:44px 36px;border:1px solid var(--border);border-top:4px solid var(--gold);position:relative;cursor:pointer;transition:transform .3s cubic-bezier(.22,.68,0,1.2),box-shadow .3s,background .2s}
+.step-card:hover{transform:translateY(-12px);box-shadow:0 24px 56px rgba(13,43,78,.18);background:var(--off)}
+.step-card:active{transform:translateY(-6px) scale(.98)}
+.step-num{font-family:'Inter',sans-serif;font-size:5rem;font-weight:800;color:rgba(13,43,78,.08);letter-spacing:-.06em;line-height:1;margin-bottom:18px;transition:color .2s}
+.step-card:hover .step-num{color:rgba(197,160,62,.18)}
+.step-icon{width:40px;height:40px;border-radius:8px;background:rgba(197,160,62,.1);border:1px solid rgba(197,160,62,.25);display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:18px}
+.step-title{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:12px;letter-spacing:-.02em}
+.step-title-cn{font-family:'Noto Sans SC',sans-serif;font-size:15px;font-weight:600;color:var(--navy);margin-bottom:10px}
+.step-desc{font-size:14px;color:var(--gray);line-height:1.75}
+.step-desc-cn{font-family:'Noto Sans SC',sans-serif;font-size:12.5px;color:var(--gray);line-height:1.9}
+.step-card-arrow{position:absolute;bottom:20px;right:20px;width:28px;height:28px;border-radius:50%;background:var(--pale);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--navy);transition:all .2s;opacity:0}
+.step-card:hover .step-card-arrow{opacity:1;background:var(--gold);color:var(--navy)}
 @media(max-width:900px){.steps-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:540px){.steps-grid{grid-template-columns:1fr}}
 
@@ -231,8 +266,8 @@ footer{background:var(--navy);padding:56px 0 28px}
     </a>
     <ul class="nav-links">
       <li><a href="#tracks"><span class="en-only">Career Tracks</span><span class="cn-only cn-text">职业方向</span></a></li>
+      <li><a href="#mentors"><span class="en-only">Mentors</span><span class="cn-only cn-text">导师团队</span></a></li>
       <li><a href="#howitworks"><span class="en-only">How It Works</span><span class="cn-only cn-text">如何运作</span></a></li>
-      <li><a href="#numbers"><span class="en-only">Results</span><span class="cn-only cn-text">成果</span></a></li>
       <li><a href="#guarantee"><span class="en-only">Guarantee</span><span class="cn-only cn-text">保障</span></a></li>
       <li><a href="#contact"><span class="en-only">Apply</span><span class="cn-only cn-text">申请</span></a></li>
     </ul>
@@ -564,6 +599,239 @@ footer{background:var(--navy);padding:56px 0 28px}
   </div>
 </section>
 
+<!-- MENTOR NETWORK -->
+<section id="mentors">
+  <div class="container">
+    <div class="eyebrow en-only">The Mentor Network</div>
+    <div class="eyebrow cn-only cn-text">导师团队</div>
+    <div class="s-title en-only fade-in">Active Practitioners. Real Access.</div>
+    <div class="s-title-cn cn-only cn-text fade-in">现任从业者。真实内部资源。</div>
+    <div class="gold-rule"></div>
+    <div class="s-sub en-only">Every mentor is currently employed at a top firm — not a career coach, not a retiree. They recruit, they interview, they close deals. Then they mentor our students.</div>
+    <div class="s-sub-cn cn-only cn-text">每位导师均在顶级机构任职——不是职业顾问，不是退休人士。他们参与招聘、主导面试、推动交易，然后辅导我们的学生。</div>
+    <div class="mentor-carousel-wrap">
+      <div class="mentor-carousel" id="mentorCarousel">
+
+        <!-- Marcus Chen – IBD -->
+        <div class="mentor-card fade-in">
+          <div class="mentor-card-head">
+            <div class="mentor-avatar">MC</div>
+            <div class="mentor-meta">
+              <div class="mentor-name">Marcus Chen</div>
+              <div class="mentor-title">Vice President, Investment Banking · Evercore</div>
+              <div class="mentor-track-badge">Investment Banking</div>
+            </div>
+          </div>
+          <div class="mentor-card-body">
+            <ul class="mentor-achievements">
+              <li>Advised on $12B+ in M&A transactions across TMT and healthcare, including 4 cross-border deals</li>
+              <li>Ranked in top 10% of Analyst class at Goldman Sachs IBD; received early promotion to Associate</li>
+              <li>Led recruiting efforts for Goldman's summer analyst program two years running; personally reviewed 300+ applications</li>
+            </ul>
+            <div class="mentor-prev en-only">Previously: Goldman Sachs IBD · Harvard Business School</div>
+            <div class="mentor-prev cn-only cn-text" style="font-family:'Noto Sans SC',sans-serif">此前任职：高盛投行部 · 哈佛商学院</div>
+          </div>
+        </div>
+
+        <!-- James Whitfield – IBD -->
+        <div class="mentor-card fade-in">
+          <div class="mentor-card-head">
+            <div class="mentor-avatar">JW</div>
+            <div class="mentor-meta">
+              <div class="mentor-name">James Whitfield</div>
+              <div class="mentor-title">Director, M&amp;A Advisory · Morgan Stanley</div>
+              <div class="mentor-track-badge">Investment Banking</div>
+            </div>
+          </div>
+          <div class="mentor-card-body">
+            <ul class="mentor-achievements">
+              <li>Closed 23 transactions totalling $31B in enterprise value across consumer, retail and industrials</li>
+              <li>Top-ranked analyst three consecutive years at Lazard; promoted directly from Analyst to Associate</li>
+              <li>Directly placed 6 mentees into Goldman, Morgan Stanley and Evercore summer offers in 2024</li>
+            </ul>
+            <div class="mentor-prev en-only">Previously: Lazard M&A · Wharton School</div>
+            <div class="mentor-prev cn-only cn-text" style="font-family:'Noto Sans SC',sans-serif">此前任职：Lazard并购部 · 沃顿商学院</div>
+          </div>
+        </div>
+
+        <!-- Priya Sharma – S&T -->
+        <div class="mentor-card fade-in">
+          <div class="mentor-card-head">
+            <div class="mentor-avatar">PS</div>
+            <div class="mentor-meta">
+              <div class="mentor-name">Priya Sharma</div>
+              <div class="mentor-title">Vice President, Equities Sales &amp; Trading · Citi</div>
+              <div class="mentor-track-badge">Sales &amp; Trading</div>
+            </div>
+          </div>
+          <div class="mentor-card-body">
+            <ul class="mentor-achievements">
+              <li>Ranked top 5% globally in Citi equities desk performance, 2022–2024; managing principal flow book exceeding $800M notional daily</li>
+              <li>Former UBS rates and credit desk — covered EM sovereign and corporate credit across London and New York</li>
+              <li>Active campus recruiter targeting Canadian universities; personally interviewed 150+ candidates over four years</li>
+            </ul>
+            <div class="mentor-prev en-only">Previously: UBS Fixed Income · Ivey Business School</div>
+            <div class="mentor-prev cn-only cn-text" style="font-family:'Noto Sans SC',sans-serif">此前任职：瑞银固定收益 · Ivey商学院</div>
+          </div>
+        </div>
+
+        <!-- David Park – Hedge Funds -->
+        <div class="mentor-card fade-in">
+          <div class="mentor-card-head">
+            <div class="mentor-avatar">DP</div>
+            <div class="mentor-meta">
+              <div class="mentor-name">David Park</div>
+              <div class="mentor-title">Portfolio Manager, Multi-Strategy · Citadel</div>
+              <div class="mentor-track-badge">Hedge Funds</div>
+            </div>
+          </div>
+          <div class="mentor-card-body">
+            <ul class="mentor-achievements">
+              <li>Delivered 38% net returns on $400M multi-strategy book in 2023; specialist in global macro and equity long/short</li>
+              <li>Former Goldman Sachs Equity Research — covered US technology sector with institutional client base of 80+ funds</li>
+              <li>Participated in Citadel's campus recruiting program; part of the team that interviews 500+ candidates annually</li>
+            </ul>
+            <div class="mentor-prev en-only">Previously: Goldman Sachs Equity Research · MIT Sloan</div>
+            <div class="mentor-prev cn-only cn-text" style="font-family:'Noto Sans SC',sans-serif">此前任职：高盛股票研究 · MIT斯隆管理学院</div>
+          </div>
+        </div>
+
+        <!-- Emily Zhao – Private Equity -->
+        <div class="mentor-card fade-in">
+          <div class="mentor-card-head">
+            <div class="mentor-avatar">EZ</div>
+            <div class="mentor-meta">
+              <div class="mentor-name">Emily Zhao</div>
+              <div class="mentor-title">Principal, Private Equity · KKR</div>
+              <div class="mentor-track-badge">Private Equity</div>
+            </div>
+          </div>
+          <div class="mentor-card-body">
+            <ul class="mentor-achievements">
+              <li>Led due diligence and execution on 3 portfolio exits exceeding $2B enterprise value in technology and software buyouts</li>
+              <li>Completed the full analyst-to-PE transition from Evercore IBD — mentors students specifically on this path</li>
+              <li>Co-authored KKR's internal PE interview prep framework; knows exactly what the firm screens for at every stage</li>
+            </ul>
+            <div class="mentor-prev en-only">Previously: Evercore IBD · Princeton University</div>
+            <div class="mentor-prev cn-only cn-text" style="font-family:'Noto Sans SC',sans-serif">此前任职：Evercore投行部 · 普林斯顿大学</div>
+          </div>
+        </div>
+
+        <!-- Ryan Connell – Wealth Management -->
+        <div class="mentor-card fade-in">
+          <div class="mentor-card-head">
+            <div class="mentor-avatar">RC</div>
+            <div class="mentor-meta">
+              <div class="mentor-name">Ryan Connell</div>
+              <div class="mentor-title">Senior VP, Private Wealth Management · Goldman Sachs</div>
+              <div class="mentor-track-badge">Wealth Management</div>
+            </div>
+          </div>
+          <div class="mentor-card-body">
+            <ul class="mentor-achievements">
+              <li>Manages $2.6B in assets across ultra-high-net-worth families and foundations; specialist in concentrated equity and estate planning</li>
+              <li>Joined Goldman Private Wealth from Morgan Stanley PWM — brings perspective on both platforms' recruiting processes</li>
+              <li>Mentored 4 students now placed in WM programs at Morgan Stanley and Goldman in the last two recruiting cycles</li>
+            </ul>
+            <div class="mentor-prev en-only">Previously: Morgan Stanley PWM · Northwestern Kellogg</div>
+            <div class="mentor-prev cn-only cn-text" style="font-family:'Noto Sans SC',sans-serif">此前任职：摩根士丹利私人财富 · 西北大学凯洛格</div>
+          </div>
+        </div>
+
+        <!-- Natalie Brooks – HF Quant -->
+        <div class="mentor-card fade-in">
+          <div class="mentor-card-head">
+            <div class="mentor-avatar">NB</div>
+            <div class="mentor-meta">
+              <div class="mentor-name">Natalie Brooks</div>
+              <div class="mentor-title">Analyst, Quantitative Strategies · Millennium</div>
+              <div class="mentor-track-badge">Hedge Funds</div>
+            </div>
+          </div>
+          <div class="mentor-card-body">
+            <ul class="mentor-achievements">
+              <li>Runs systematic equity strategies with $200M+ in AUM; focus on cross-sectional momentum and alternative data signals</li>
+              <li>MIT Computer Science &amp; Mathematics — one of few Canadian undergrads to break into quant HF directly from campus</li>
+              <li>Placed 3 students into quant HF roles at Millennium, Two Sigma and Citadel in 2024 recruiting cycle</li>
+            </ul>
+            <div class="mentor-prev en-only">Previously: Goldman Sachs Securities · MIT</div>
+            <div class="mentor-prev cn-only cn-text" style="font-family:'Noto Sans SC',sans-serif">此前任职：高盛证券 · 麻省理工学院</div>
+          </div>
+        </div>
+
+        <!-- Michael Torres – PE -->
+        <div class="mentor-card fade-in">
+          <div class="mentor-card-head">
+            <div class="mentor-avatar">MT</div>
+            <div class="mentor-meta">
+              <div class="mentor-name">Michael Torres</div>
+              <div class="mentor-title">Senior Associate · Bain Capital</div>
+              <div class="mentor-track-badge">Private Equity</div>
+            </div>
+          </div>
+          <div class="mentor-card-body">
+            <ul class="mentor-achievements">
+              <li>$1.8B in closed PE transactions across healthcare services and industrials; expert in operational value creation</li>
+              <li>Former BCG consultant — brings both consulting and banking perspective, advises students on multiple entry paths into PE</li>
+              <li>Mentored students from cold start to signed offers at KKR, Bain Capital and Silver Lake across two recruiting seasons</li>
+            </ul>
+            <div class="mentor-prev en-only">Previously: Goldman Sachs IBD · BCG · Columbia Business School</div>
+            <div class="mentor-prev cn-only cn-text" style="font-family:'Noto Sans SC',sans-serif">此前任职：高盛投行部 · BCG · 哥伦比亚商学院</div>
+          </div>
+        </div>
+
+        <!-- Sarah Mitchell – S&T MD -->
+        <div class="mentor-card fade-in">
+          <div class="mentor-card-head">
+            <div class="mentor-avatar">SM</div>
+            <div class="mentor-meta">
+              <div class="mentor-name">Sarah Mitchell</div>
+              <div class="mentor-title">Managing Director, Fixed Income · Goldman Sachs</div>
+              <div class="mentor-track-badge">Sales &amp; Trading</div>
+            </div>
+          </div>
+          <div class="mentor-card-body">
+            <ul class="mentor-achievements">
+              <li>Manages rates book with $1.2B+ notional exposure; previously covered EM sovereign rates and credit at Barclays London</li>
+              <li>One of the youngest MDs at Goldman's FICC desk; promoted in under 9 years from Analyst</li>
+              <li>Campus recruiter for Goldman's Canadian S&amp;T program — direct line into the firm's summer analyst process</li>
+            </ul>
+            <div class="mentor-prev en-only">Previously: Barclays Fixed Income London · Oxford University</div>
+            <div class="mentor-prev cn-only cn-text" style="font-family:'Noto Sans SC',sans-serif">此前任职：巴克莱固定收益伦敦 · 牛津大学</div>
+          </div>
+        </div>
+
+        <!-- Thomas Wu – AM -->
+        <div class="mentor-card fade-in">
+          <div class="mentor-card-head">
+            <div class="mentor-avatar">TW</div>
+            <div class="mentor-meta">
+              <div class="mentor-name">Thomas Wu</div>
+              <div class="mentor-title">Portfolio Analyst, Asset Management · Bridgewater</div>
+              <div class="mentor-track-badge">Asset Management</div>
+            </div>
+          </div>
+          <div class="mentor-card-body">
+            <ul class="mentor-achievements">
+              <li>Part of Bridgewater's Pure Alpha team — covers global macro strategies across fixed income, FX and commodities</li>
+              <li>Former Silver Lake associate — brings both alt asset management and PE perspectives for students targeting AM broadly</li>
+              <li>First-generation finance professional; particularly strong advocate for students from non-target schools and diverse backgrounds</li>
+            </ul>
+            <div class="mentor-prev en-only">Previously: Silver Lake PE · Evercore IBD · UBC Sauder</div>
+            <div class="mentor-prev cn-only cn-text" style="font-family:'Noto Sans SC',sans-serif">此前任职：Silver Lake私募 · Evercore投行 · UBC商学院</div>
+          </div>
+        </div>
+
+      </div><!-- end carousel -->
+      <div class="carousel-nav">
+        <button class="carousel-btn" onclick="scrollCarousel(-1)" aria-label="Previous">&#8592;</button>
+        <button class="carousel-btn" onclick="scrollCarousel(1)" aria-label="Next">&#8594;</button>
+      </div>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+  </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section id="howitworks">
   <div class="container">
@@ -577,45 +845,57 @@ footer{background:var(--navy);padding:56px 0 28px}
     <div class="steps-grid">
       <div class="step-card fade-in">
         <div class="step-num">01</div>
+        <div class="step-icon">📋</div>
         <div class="step-title en-only">Apply</div>
         <div class="step-title-cn cn-only cn-text">提交申请</div>
         <p class="step-desc en-only">Submit your profile, target firms, and timeline. Admission is application-based — we accept students who are serious about the process.</p>
         <p class="step-desc-cn cn-only cn-text">提交个人背景、目标机构及时间规划。录取基于申请评估——我们只接受认真备战的学生。</p>
+        <div class="step-card-arrow">→</div>
       </div>
       <div class="step-card fade-in">
         <div class="step-num">02</div>
+        <div class="step-icon">🤝</div>
         <div class="step-title en-only">Match</div>
         <div class="step-title-cn cn-only cn-text">匹配导师</div>
         <p class="step-desc en-only">Paired 1:1 with an active practitioner at your target firm or vertical. Your mentor knows the exact process — because they lived it.</p>
         <p class="step-desc-cn cn-only cn-text">与目标机构或领域的现任从业者一对一匹配。您的导师深知整个流程——因为他们亲身经历过。</p>
+        <div class="step-card-arrow">→</div>
       </div>
       <div class="step-card fade-in">
         <div class="step-num">03</div>
+        <div class="step-icon">🎯</div>
         <div class="step-title en-only">Train</div>
         <div class="step-title-cn cn-only cn-text">系统训练</div>
         <p class="step-desc en-only">Resume, cover letter, technical prep, behavioral interviews, mocks and question banks — built to the exact standard of your target firm.</p>
         <p class="step-desc-cn cn-only cn-text">简历、求职信、技术面试、行为面试、模拟训练与题库——完全对标目标机构的考核标准。</p>
+        <div class="step-card-arrow">→</div>
       </div>
       <div class="step-card fade-in">
         <div class="step-num">04</div>
+        <div class="step-icon">🌐</div>
         <div class="step-title en-only">Network</div>
         <div class="step-title-cn cn-only cn-text">建立人脉</div>
         <p class="step-desc en-only">Warm introductions, LinkedIn outreach strategy, alumni mapping, and coffee chat preparation — the edge that textbooks and YouTube don't give you.</p>
         <p class="step-desc-cn cn-only cn-text">内部引荐、领英拓展策略、校友网络梳理及行业交流准备——这是课本和网络视频无法给予的竞争优势。</p>
+        <div class="step-card-arrow">→</div>
       </div>
       <div class="step-card fade-in">
         <div class="step-num">05</div>
+        <div class="step-icon">⚡</div>
         <div class="step-title en-only">Recruit</div>
         <div class="step-title-cn cn-only cn-text">全程招募支持</div>
         <p class="step-desc en-only">Live support through every application, superday, and offer stage. Offer negotiation, deadline management, and real-time feedback after every round.</p>
         <p class="step-desc-cn cn-only cn-text">全程陪跑每一轮申请、终轮面试及录用阶段，提供录用谈判、截止日期管理与每轮后实时反馈。</p>
+        <div class="step-card-arrow">→</div>
       </div>
       <div class="step-card fade-in">
         <div class="step-num">06</div>
+        <div class="step-icon">🏆</div>
         <div class="step-title en-only">Place</div>
         <div class="step-title-cn cn-only cn-text">斩获录用</div>
         <p class="step-desc en-only">Land the internship. If you complete all program requirements and don't receive a qualifying offer, we stay with you — at no additional cost — until you do.</p>
         <p class="step-desc-cn cn-only cn-text">成功拿到实习录用。若完成所有项目要求后仍未获录用，我们将继续陪伴——零额外费用——直到录用到手。</p>
+        <div class="step-card-arrow">★</div>
       </div>
     </div>
   </div>
@@ -852,6 +1132,46 @@ footer{background:var(--navy);padding:56px 0 28px}
 </div>
 
 <script>
+// Carousel
+(function(){
+  const track = document.getElementById('mentorCarousel');
+  const dotsEl = document.getElementById('carouselDots');
+  if(!track) return;
+  const cards = track.querySelectorAll('.mentor-card');
+  const count = cards.length;
+  let dots = [];
+  for(let i=0;i<count;i++){
+    const d = document.createElement('div');
+    d.className='cdot'+(i===0?' active':'');
+    d.onclick=()=>scrollToCard(i);
+    dotsEl.appendChild(d);
+    dots.push(d);
+  }
+  function scrollToCard(i){
+    const card = cards[i];
+    track.scrollTo({left:card.offsetLeft - 20, behavior:'smooth'});
+    dots.forEach((d,j)=>d.classList.toggle('active',j===i));
+  }
+  track.addEventListener('scroll',()=>{
+    const w = track.clientWidth;
+    let best=0, bestDist=Infinity;
+    cards.forEach((c,i)=>{
+      const dist=Math.abs(c.getBoundingClientRect().left - track.getBoundingClientRect().left);
+      if(dist<bestDist){bestDist=dist;best=i;}
+    });
+    dots.forEach((d,i)=>d.classList.toggle('active',i===best));
+  });
+  window._carouselScrollTo = scrollToCard;
+  window._carouselCards = cards;
+})();
+
+function scrollCarousel(dir){
+  const track=document.getElementById('mentorCarousel');
+  if(!track) return;
+  const cardW = track.querySelector('.mentor-card').offsetWidth + 20;
+  track.scrollBy({left: dir * cardW, behavior:'smooth'});
+}
+
 function setLang(lang) {
   document.documentElement.setAttribute('data-lang', lang);
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
