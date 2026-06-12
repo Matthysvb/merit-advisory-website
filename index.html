@@ -122,19 +122,39 @@ section{padding:96px 0}
 #tracks{background:var(--white);padding:96px 0}
 .tracks-intro{font-size:16px;color:var(--gray);line-height:1.72;max-width:640px;margin-bottom:52px}
 .tracks-intro-cn{font-family:'Noto Sans SC',sans-serif;font-size:16px;color:var(--gray);line-height:1.85;max-width:640px;margin-bottom:52px}
-.tracks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.track-card{border-radius:var(--rl);border:1px solid var(--border);overflow:hidden;transition:transform .25s,box-shadow .25s;background:var(--off)}
-.track-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-.track-head{background:var(--navy);padding:20px 24px;border-bottom:3px solid var(--gold)}
+.tracks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
+.track-card{border-radius:var(--rl);border:1px solid var(--border);overflow:hidden;transition:border-color .3s,box-shadow .3s;background:var(--off);cursor:pointer}
+.track-card:hover{box-shadow:var(--shadow-lg);border-color:rgba(197,160,62,.4)}
+.track-card.expanded{border-color:var(--gold);box-shadow:0 16px 52px rgba(13,43,78,.2)}
+.track-head{background:var(--navy);padding:18px 22px;border-bottom:3px solid rgba(197,160,62,.35);display:flex;align-items:center;justify-content:space-between;gap:12px;transition:border-color .3s}
+.track-card.expanded .track-head{border-bottom-color:var(--gold)}
+.track-head-text{flex:1;min-width:0}
 .track-name{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
 .track-name-cn{font-family:'Noto Sans SC',sans-serif;font-size:13px;color:rgba(197,160,62,.85);margin-top:5px;font-weight:600;letter-spacing:.04em}
-.track-body{padding:24px}
-.track-desc{font-size:13px;color:var(--gray);line-height:1.7;margin-bottom:20px}
-.track-desc-cn{font-family:'Noto Sans SC',sans-serif;font-size:13px;color:var(--gray);line-height:1.85;margin-bottom:20px}
-.track-firms{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.firm-logo-sm{height:18px;width:auto;max-width:80px;object-fit:contain;opacity:.8}
+.track-toggle{width:26px;height:26px;border-radius:50%;border:1px solid rgba(197,160,62,.45);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:300;line-height:1;transition:transform .35s cubic-bezier(.22,.68,0,1.2),background .25s,color .25s;flex-shrink:0;user-select:none}
+.track-card.expanded .track-toggle{transform:rotate(45deg);background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.track-body{padding:22px}
+.track-desc{font-size:13px;color:var(--gray);line-height:1.7;margin-bottom:16px}
+.track-desc-cn{font-family:'Noto Sans SC',sans-serif;font-size:13px;color:var(--gray);line-height:1.85;margin-bottom:16px}
+.track-firms{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.firm-logo-sm{height:16px;width:auto;max-width:72px;object-fit:contain;opacity:.75}
 .firm-logo-dark{opacity:1;border-radius:2px}
-.firm-badge{display:inline-flex;align-items:center;background:var(--pale);border:1px solid rgba(13,43,78,.12);color:var(--navy);font-size:9.5px;font-weight:700;padding:3px 8px;border-radius:3px;letter-spacing:.04em;white-space:nowrap}
+.firm-badge{display:inline-flex;align-items:center;background:var(--pale);border:1px solid rgba(13,43,78,.12);color:var(--navy);font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px;letter-spacing:.04em;white-space:nowrap}
+/* EXPAND PANEL */
+.track-expand{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.22,.68,0,1.05)}
+.track-card.expanded .track-expand{max-height:700px}
+.expand-inner{padding:0 22px 22px;background:var(--white);border-top:1px solid var(--border)}
+.expand-divider{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding-top:18px}
+.expand-col-label{font-size:9.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.expand-col-label-cn{font-family:'Noto Sans SC',sans-serif;font-size:11px;font-weight:700;color:var(--gold);margin-bottom:10px;display:block}
+.expand-chips{display:flex;flex-wrap:wrap;gap:5px}
+.expand-chip{background:var(--pale);border:1px solid rgba(13,43,78,.1);color:var(--navy);font-size:10.5px;font-weight:600;padding:4px 9px;border-radius:4px;letter-spacing:.02em;line-height:1.3}
+.expand-chip-cn{font-family:'Noto Sans SC',sans-serif;font-size:10.5px;font-weight:600;padding:4px 9px;border-radius:4px;background:rgba(197,160,62,.08);border:1px solid rgba(197,160,62,.2);color:var(--navy);letter-spacing:.02em}
+.expand-firms{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.expand-firm-logo{height:20px;width:auto;max-width:88px;object-fit:contain;opacity:.85;transition:opacity .2s}
+.expand-firm-logo:hover{opacity:1}
+.expand-firm-logo-dark{height:20px;width:auto;max-width:88px;object-fit:contain;border-radius:2px}
+.expand-firm-badge{display:inline-flex;align-items:center;background:var(--pale);border:1px solid rgba(13,43,78,.12);color:var(--navy);font-size:9.5px;font-weight:700;padding:3px 8px;border-radius:3px;letter-spacing:.03em;white-space:nowrap}
 @media(max-width:900px){.tracks-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.tracks-grid{grid-template-columns:1fr}}
 
@@ -480,125 +500,371 @@ footer{background:var(--navy);padding:56px 0 28px}
     <div class="tracks-grid">
 
       <!-- INVESTMENT BANKING -->
-      <div class="track-card fade-in">
+      <div class="track-card fade-in" onclick="toggleTrack(this)">
         <div class="track-head">
-          <div class="track-name en-only">Investment Banking</div>
-          <div class="track-name-cn cn-only cn-text">投资银行</div>
+          <div class="track-head-text">
+            <div class="track-name en-only">Investment Banking</div>
+            <div class="track-name-cn cn-only cn-text">投资银行</div>
+          </div>
+          <div class="track-toggle">+</div>
         </div>
         <div class="track-body">
-          <p class="track-desc en-only">Mentors from elite boutiques and bulge brackets provide technical training, live interview preparation, networking guidance, and recruiting strategy tailored to each specific firm.</p>
-          <p class="track-desc-cn cn-only cn-text">来自精英精品投行及大型投行的导师，提供技术训练、面试模拟、人脉策略及针对具体机构的招募辅导。</p>
+          <p class="track-desc en-only">Mentors from elite boutiques and bulge brackets coach you through every stage — from resume to superday.</p>
+          <p class="track-desc-cn cn-only cn-text">精英精品投行及大型投行导师全程陪跑，从简历到终轮面试。</p>
           <div class="track-firms">
             <img src="logos/01_Evercore.png" alt="Evercore" class="firm-logo-sm">
             <img src="logos/02_Goldman_Sachs.png" alt="Goldman Sachs" class="firm-logo-sm">
             <img src="logos/12_Morgan_Stanley.png" alt="Morgan Stanley" class="firm-logo-sm">
-            <img src="logos/10_Centerview_Partners.png" alt="Centerview" class="firm-logo-sm">
-            <img src="logos/21_PJT.png" alt="PJT" class="firm-logo-sm">
             <img src="logos/33_JPMorgan.webp" alt="JPMorgan" class="firm-logo-sm">
             <img src="logos/04_Lazard.png" alt="Lazard" class="firm-logo-sm">
+          </div>
+        </div>
+        <div class="track-expand">
+          <div class="expand-inner">
+            <div class="expand-divider">
+              <div>
+                <div class="expand-col-label en-only">Functions &amp; Roles</div>
+                <div class="expand-col-label-cn cn-only cn-text">职能与岗位</div>
+                <div class="expand-chips">
+                  <span class="expand-chip en-only">M&amp;A Advisory</span>
+                  <span class="expand-chip en-only">Leveraged Finance</span>
+                  <span class="expand-chip en-only">ECM</span>
+                  <span class="expand-chip en-only">DCM</span>
+                  <span class="expand-chip en-only">Restructuring</span>
+                  <span class="expand-chip en-only">Coverage</span>
+                  <span class="expand-chip-cn cn-only cn-text">并购咨询</span>
+                  <span class="expand-chip-cn cn-only cn-text">杠杆融资</span>
+                  <span class="expand-chip-cn cn-only cn-text">股权资本市场</span>
+                  <span class="expand-chip-cn cn-only cn-text">债权资本市场</span>
+                  <span class="expand-chip-cn cn-only cn-text">重组业务</span>
+                  <span class="expand-chip-cn cn-only cn-text">行业覆盖</span>
+                </div>
+              </div>
+              <div>
+                <div class="expand-col-label en-only">Confirmed Placements</div>
+                <div class="expand-col-label-cn cn-only cn-text">已确认录用机构</div>
+                <div class="expand-firms">
+                  <img src="logos/01_Evercore.png" alt="Evercore" class="expand-firm-logo">
+                  <img src="logos/02_Goldman_Sachs.png" alt="Goldman Sachs" class="expand-firm-logo">
+                  <img src="logos/12_Morgan_Stanley.png" alt="Morgan Stanley" class="expand-firm-logo">
+                  <img src="logos/33_JPMorgan.webp" alt="JPMorgan" class="expand-firm-logo">
+                  <img src="logos/10_Centerview_Partners.png" alt="Centerview" class="expand-firm-logo">
+                  <img src="logos/21_PJT.png" alt="PJT" class="expand-firm-logo">
+                  <img src="logos/04_Lazard.png" alt="Lazard" class="expand-firm-logo">
+                  <img src="logos/15_Moelis.png" alt="Moelis" class="expand-firm-logo">
+                  <img src="logos/16_Jefferies.png" alt="Jefferies" class="expand-firm-logo">
+                  <img src="logos/05_Houlihan_Lokey.png" alt="Houlihan Lokey" class="expand-firm-logo">
+                  <img src="logos/07_Barclays.png" alt="Barclays" class="expand-firm-logo">
+                  <img src="logos/09_Guggenheim.png" alt="Guggenheim" class="expand-firm-logo">
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- PRIVATE EQUITY -->
-      <div class="track-card fade-in">
+      <div class="track-card fade-in" onclick="toggleTrack(this)">
         <div class="track-head">
-          <div class="track-name en-only">Private Equity</div>
-          <div class="track-name-cn cn-only cn-text">私募股权</div>
+          <div class="track-head-text">
+            <div class="track-name en-only">Private Equity</div>
+            <div class="track-name-cn cn-only cn-text">私募股权</div>
+          </div>
+          <div class="track-toggle">+</div>
         </div>
         <div class="track-body">
-          <p class="track-desc en-only">Learn deal evaluation, financial modelling, investment thesis construction, and PE recruiting strategy directly from investors at top buyout and growth equity funds.</p>
-          <p class="track-desc-cn cn-only cn-text">直接向顶级并购及成长型基金投资人学习交易评估、财务建模、投资逻辑及私募招募策略。</p>
+          <p class="track-desc en-only">Learn deal evaluation, modelling, and PE recruiting from investors at top buyout and growth equity funds.</p>
+          <p class="track-desc-cn cn-only cn-text">向顶级并购及成长型基金投资人学习交易评估、财务建模及私募招募。</p>
           <div class="track-firms">
             <img src="logos/23_KKR.png" alt="KKR" class="firm-logo-sm">
             <img src="logos/14_Silver_Lake.png" alt="Silver Lake" class="firm-logo-sm">
             <img src="logos/13_Bain_Capital.png" alt="Bain Capital" class="firm-logo-sm">
             <img src="logos/31_Blackstone.png" alt="Blackstone" class="firm-logo-sm firm-logo-dark">
             <span class="firm-badge">Carlyle</span>
-            <span class="firm-badge">Apollo</span>
-            <span class="firm-badge">Ares</span>
+          </div>
+        </div>
+        <div class="track-expand">
+          <div class="expand-inner">
+            <div class="expand-divider">
+              <div>
+                <div class="expand-col-label en-only">Functions &amp; Roles</div>
+                <div class="expand-col-label-cn cn-only cn-text">职能与岗位</div>
+                <div class="expand-chips">
+                  <span class="expand-chip en-only">Deal Origination</span>
+                  <span class="expand-chip en-only">LBO Modelling</span>
+                  <span class="expand-chip en-only">Due Diligence</span>
+                  <span class="expand-chip en-only">Portfolio Ops</span>
+                  <span class="expand-chip en-only">Growth Equity</span>
+                  <span class="expand-chip en-only">Distressed &amp; Credit</span>
+                  <span class="expand-chip-cn cn-only cn-text">交易寻源</span>
+                  <span class="expand-chip-cn cn-only cn-text">LBO建模</span>
+                  <span class="expand-chip-cn cn-only cn-text">尽职调查</span>
+                  <span class="expand-chip-cn cn-only cn-text">投后管理</span>
+                  <span class="expand-chip-cn cn-only cn-text">成长型股权</span>
+                  <span class="expand-chip-cn cn-only cn-text">不良资产</span>
+                </div>
+              </div>
+              <div>
+                <div class="expand-col-label en-only">Confirmed Placements</div>
+                <div class="expand-col-label-cn cn-only cn-text">已确认录用机构</div>
+                <div class="expand-firms">
+                  <img src="logos/23_KKR.png" alt="KKR" class="expand-firm-logo">
+                  <img src="logos/14_Silver_Lake.png" alt="Silver Lake" class="expand-firm-logo">
+                  <img src="logos/13_Bain_Capital.png" alt="Bain Capital" class="expand-firm-logo">
+                  <img src="logos/31_Blackstone.png" alt="Blackstone" class="expand-firm-logo-dark">
+                  <span class="expand-firm-badge">Carlyle</span>
+                  <span class="expand-firm-badge">Apollo</span>
+                  <span class="expand-firm-badge">Ares</span>
+                  <span class="expand-firm-badge">CD&amp;R</span>
+                  <span class="expand-firm-badge">CVC Capital</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- HEDGE FUNDS -->
-      <div class="track-card fade-in">
+      <div class="track-card fade-in" onclick="toggleTrack(this)">
         <div class="track-head">
-          <div class="track-name en-only">Hedge Funds</div>
-          <div class="track-name-cn cn-only cn-text">对冲基金</div>
+          <div class="track-head-text">
+            <div class="track-name en-only">Hedge Funds</div>
+            <div class="track-name-cn cn-only cn-text">对冲基金</div>
+          </div>
+          <div class="track-toggle">+</div>
         </div>
         <div class="track-body">
-          <p class="track-desc en-only">Exposure to public markets investing, fundamental and quantitative research processes, pitch preparation, and hedge fund recruiting — including multi-manager and quant shops.</p>
-          <p class="track-desc-cn cn-only cn-text">深入了解公开市场投资、基本面与量化研究、投资提案及对冲基金招募——涵盖多策略及量化基金。</p>
+          <p class="track-desc en-only">Learn public markets investing and HF recruiting from active PMs at multi-manager and quant funds.</p>
+          <p class="track-desc-cn cn-only cn-text">向多策略及量化基金现任投资经理学习公开市场投资与对冲基金招募。</p>
           <div class="track-firms">
             <img src="logos/18_Citadel.png" alt="Citadel" class="firm-logo-sm">
             <img src="logos/08_Millennium.png" alt="Millennium" class="firm-logo-sm">
             <img src="logos/28_Point72.png" alt="Point72" class="firm-logo-sm">
             <img src="logos/29_Bridgewater.png" alt="Bridgewater" class="firm-logo-sm">
             <span class="firm-badge">Two Sigma</span>
-            <span class="firm-badge">D.E. Shaw</span>
+          </div>
+        </div>
+        <div class="track-expand">
+          <div class="expand-inner">
+            <div class="expand-divider">
+              <div>
+                <div class="expand-col-label en-only">Functions &amp; Roles</div>
+                <div class="expand-col-label-cn cn-only cn-text">职能与岗位</div>
+                <div class="expand-chips">
+                  <span class="expand-chip en-only">Long/Short Equity</span>
+                  <span class="expand-chip en-only">Global Macro</span>
+                  <span class="expand-chip en-only">Event-Driven</span>
+                  <span class="expand-chip en-only">Quant/Systematic</span>
+                  <span class="expand-chip en-only">Credit</span>
+                  <span class="expand-chip en-only">Multi-Strategy</span>
+                  <span class="expand-chip-cn cn-only cn-text">多空股票</span>
+                  <span class="expand-chip-cn cn-only cn-text">全球宏观</span>
+                  <span class="expand-chip-cn cn-only cn-text">事件驱动</span>
+                  <span class="expand-chip-cn cn-only cn-text">量化/系统化</span>
+                  <span class="expand-chip-cn cn-only cn-text">信用策略</span>
+                  <span class="expand-chip-cn cn-only cn-text">多策略</span>
+                </div>
+              </div>
+              <div>
+                <div class="expand-col-label en-only">Confirmed Placements</div>
+                <div class="expand-col-label-cn cn-only cn-text">已确认录用机构</div>
+                <div class="expand-firms">
+                  <img src="logos/18_Citadel.png" alt="Citadel" class="expand-firm-logo">
+                  <img src="logos/08_Millennium.png" alt="Millennium" class="expand-firm-logo">
+                  <img src="logos/28_Point72.png" alt="Point72" class="expand-firm-logo">
+                  <img src="logos/29_Bridgewater.png" alt="Bridgewater" class="expand-firm-logo">
+                  <img src="logos/22_Jane_Street.png" alt="Jane Street" class="expand-firm-logo">
+                  <span class="expand-firm-badge">Two Sigma</span>
+                  <span class="expand-firm-badge">D.E. Shaw</span>
+                  <span class="expand-firm-badge">Balyasny</span>
+                  <span class="expand-firm-badge">Schonfeld</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- SALES & TRADING -->
-      <div class="track-card fade-in">
+      <div class="track-card fade-in" onclick="toggleTrack(this)">
         <div class="track-head">
-          <div class="track-name en-only">Sales &amp; Trading</div>
-          <div class="track-name-cn cn-only cn-text">销售与交易</div>
+          <div class="track-head-text">
+            <div class="track-name en-only">Sales &amp; Trading</div>
+            <div class="track-name-cn cn-only cn-text">销售与交易</div>
+          </div>
+          <div class="track-toggle">+</div>
         </div>
         <div class="track-body">
-          <p class="track-desc en-only">Learn market fundamentals, trading concepts, macro thinking, and S&amp;T recruiting strategy directly from professionals on trading floors at the world's largest banks.</p>
-          <p class="track-desc-cn cn-only cn-text">直接向顶级银行交易大厅的专业人士学习市场基础、交易逻辑、宏观思维及销售交易招募策略。</p>
+          <p class="track-desc en-only">Learn S&amp;T recruiting and market fundamentals directly from professionals on the world's top trading floors.</p>
+          <p class="track-desc-cn cn-only cn-text">直接向全球顶级交易大厅从业者学习销售交易招募与市场基础。</p>
           <div class="track-firms">
             <img src="logos/02_Goldman_Sachs.png" alt="Goldman Sachs" class="firm-logo-sm">
             <img src="logos/12_Morgan_Stanley.png" alt="Morgan Stanley" class="firm-logo-sm">
             <img src="logos/11_Citi.png" alt="Citi" class="firm-logo-sm">
-            <img src="logos/07_Barclays.png" alt="Barclays" class="firm-logo-sm">
-            <img src="logos/17_UBS.png" alt="UBS" class="firm-logo-sm">
             <img src="logos/33_JPMorgan.webp" alt="JPMorgan" class="firm-logo-sm">
             <img src="logos/30_Bank_of_America.png" alt="Bank of America" class="firm-logo-sm">
+          </div>
+        </div>
+        <div class="track-expand">
+          <div class="expand-inner">
+            <div class="expand-divider">
+              <div>
+                <div class="expand-col-label en-only">Functions &amp; Roles</div>
+                <div class="expand-col-label-cn cn-only cn-text">职能与岗位</div>
+                <div class="expand-chips">
+                  <span class="expand-chip en-only">Equities</span>
+                  <span class="expand-chip en-only">Fixed Income</span>
+                  <span class="expand-chip en-only">FX &amp; Rates</span>
+                  <span class="expand-chip en-only">Structured Products</span>
+                  <span class="expand-chip en-only">Commodities</span>
+                  <span class="expand-chip en-only">Prime Brokerage</span>
+                  <span class="expand-chip-cn cn-only cn-text">股票</span>
+                  <span class="expand-chip-cn cn-only cn-text">固定收益</span>
+                  <span class="expand-chip-cn cn-only cn-text">外汇与利率</span>
+                  <span class="expand-chip-cn cn-only cn-text">结构性产品</span>
+                  <span class="expand-chip-cn cn-only cn-text">大宗商品</span>
+                  <span class="expand-chip-cn cn-only cn-text">主经纪商</span>
+                </div>
+              </div>
+              <div>
+                <div class="expand-col-label en-only">Confirmed Placements</div>
+                <div class="expand-col-label-cn cn-only cn-text">已确认录用机构</div>
+                <div class="expand-firms">
+                  <img src="logos/02_Goldman_Sachs.png" alt="Goldman Sachs" class="expand-firm-logo">
+                  <img src="logos/12_Morgan_Stanley.png" alt="Morgan Stanley" class="expand-firm-logo">
+                  <img src="logos/11_Citi.png" alt="Citi" class="expand-firm-logo">
+                  <img src="logos/07_Barclays.png" alt="Barclays" class="expand-firm-logo">
+                  <img src="logos/17_UBS.png" alt="UBS" class="expand-firm-logo">
+                  <img src="logos/33_JPMorgan.webp" alt="JPMorgan" class="expand-firm-logo">
+                  <img src="logos/30_Bank_of_America.png" alt="Bank of America" class="expand-firm-logo">
+                  <img src="logos/22_Jane_Street.png" alt="Jane Street" class="expand-firm-logo">
+                  <span class="expand-firm-badge">RBC Capital</span>
+                  <span class="expand-firm-badge">Deutsche Bank</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- ASSET MANAGEMENT -->
-      <div class="track-card fade-in">
+      <div class="track-card fade-in" onclick="toggleTrack(this)">
         <div class="track-head">
-          <div class="track-name en-only">Asset Management</div>
-          <div class="track-name-cn cn-only cn-text">资产管理</div>
+          <div class="track-head-text">
+            <div class="track-name en-only">Asset Management</div>
+            <div class="track-name-cn cn-only cn-text">资产管理</div>
+          </div>
+          <div class="track-toggle">+</div>
         </div>
         <div class="track-body">
-          <p class="track-desc en-only">Gain exposure to portfolio management, investment research, long-term capital allocation, and asset management recruiting across both traditional and alternative managers.</p>
-          <p class="track-desc-cn cn-only cn-text">深入了解投资组合管理、投资研究、长期资本配置，以及传统和另类资产管理的招募流程。</p>
+          <p class="track-desc en-only">Gain exposure to portfolio management and AM recruiting across traditional and alternative managers.</p>
+          <p class="track-desc-cn cn-only cn-text">深入了解投资组合管理及传统与另类资产管理的招募流程。</p>
           <div class="track-firms">
             <img src="logos/02_Goldman_Sachs.png" alt="Goldman Sachs" class="firm-logo-sm">
             <img src="logos/20_StepStone.png" alt="StepStone" class="firm-logo-sm">
             <img src="logos/29_Bridgewater.png" alt="Bridgewater" class="firm-logo-sm">
             <span class="firm-badge">BlackRock</span>
             <span class="firm-badge">Fidelity</span>
-            <span class="firm-badge">Vanguard</span>
-            <span class="firm-badge">Capital Group</span>
+          </div>
+        </div>
+        <div class="track-expand">
+          <div class="expand-inner">
+            <div class="expand-divider">
+              <div>
+                <div class="expand-col-label en-only">Functions &amp; Roles</div>
+                <div class="expand-col-label-cn cn-only cn-text">职能与岗位</div>
+                <div class="expand-chips">
+                  <span class="expand-chip en-only">Portfolio Management</span>
+                  <span class="expand-chip en-only">Equity Research</span>
+                  <span class="expand-chip en-only">Fixed Income</span>
+                  <span class="expand-chip en-only">Multi-Asset</span>
+                  <span class="expand-chip en-only">Alternatives</span>
+                  <span class="expand-chip en-only">Quant Research</span>
+                  <span class="expand-chip-cn cn-only cn-text">投资组合管理</span>
+                  <span class="expand-chip-cn cn-only cn-text">股票研究</span>
+                  <span class="expand-chip-cn cn-only cn-text">固定收益</span>
+                  <span class="expand-chip-cn cn-only cn-text">多资产策略</span>
+                  <span class="expand-chip-cn cn-only cn-text">另类投资</span>
+                  <span class="expand-chip-cn cn-only cn-text">量化研究</span>
+                </div>
+              </div>
+              <div>
+                <div class="expand-col-label en-only">Confirmed Placements</div>
+                <div class="expand-col-label-cn cn-only cn-text">已确认录用机构</div>
+                <div class="expand-firms">
+                  <img src="logos/02_Goldman_Sachs.png" alt="Goldman Sachs" class="expand-firm-logo">
+                  <img src="logos/20_StepStone.png" alt="StepStone" class="expand-firm-logo">
+                  <img src="logos/29_Bridgewater.png" alt="Bridgewater" class="expand-firm-logo">
+                  <span class="expand-firm-badge">BlackRock</span>
+                  <span class="expand-firm-badge">Fidelity</span>
+                  <span class="expand-firm-badge">Vanguard</span>
+                  <span class="expand-firm-badge">Capital Group</span>
+                  <span class="expand-firm-badge">PIMCO</span>
+                  <span class="expand-firm-badge">Nuveen</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- WEALTH MANAGEMENT -->
-      <div class="track-card fade-in">
+      <div class="track-card fade-in" onclick="toggleTrack(this)">
         <div class="track-head">
-          <div class="track-name en-only">Wealth Management</div>
-          <div class="track-name-cn cn-only cn-text">财富管理</div>
+          <div class="track-head-text">
+            <div class="track-name en-only">Wealth Management</div>
+            <div class="track-name-cn cn-only cn-text">财富管理</div>
+          </div>
+          <div class="track-toggle">+</div>
         </div>
         <div class="track-body">
-          <p class="track-desc en-only">Learn how advisors build and manage client relationships, construct portfolios, and serve high-net-worth individuals and families at the world's leading private wealth platforms.</p>
-          <p class="track-desc-cn cn-only cn-text">学习顶级私人财富平台的客户关系管理、投资组合构建及高净值客户服务体系。</p>
+          <p class="track-desc en-only">Learn client advisory, portfolio construction, and WM recruiting at the world's leading private wealth platforms.</p>
+          <p class="track-desc-cn cn-only cn-text">学习顶级私人财富平台的客户咨询、投资组合构建及财富管理招募。</p>
           <div class="track-firms">
             <img src="logos/02_Goldman_Sachs.png" alt="Goldman Sachs" class="firm-logo-sm">
             <img src="logos/12_Morgan_Stanley.png" alt="Morgan Stanley" class="firm-logo-sm">
             <img src="logos/17_UBS.png" alt="UBS" class="firm-logo-sm">
             <img src="logos/33_JPMorgan.webp" alt="JPMorgan" class="firm-logo-sm">
             <img src="logos/30_Bank_of_America.png" alt="Bank of America" class="firm-logo-sm">
-            <span class="firm-badge">RBC</span>
+          </div>
+        </div>
+        <div class="track-expand">
+          <div class="expand-inner">
+            <div class="expand-divider">
+              <div>
+                <div class="expand-col-label en-only">Functions &amp; Roles</div>
+                <div class="expand-col-label-cn cn-only cn-text">职能与岗位</div>
+                <div class="expand-chips">
+                  <span class="expand-chip en-only">Private Wealth Advisor</span>
+                  <span class="expand-chip en-only">Portfolio Construction</span>
+                  <span class="expand-chip en-only">Family Office</span>
+                  <span class="expand-chip en-only">Trust &amp; Estate</span>
+                  <span class="expand-chip en-only">Client Relations</span>
+                  <span class="expand-chip en-only">Investment Advisory</span>
+                  <span class="expand-chip-cn cn-only cn-text">私人财富顾问</span>
+                  <span class="expand-chip-cn cn-only cn-text">投资组合构建</span>
+                  <span class="expand-chip-cn cn-only cn-text">家族办公室</span>
+                  <span class="expand-chip-cn cn-only cn-text">信托与遗产</span>
+                  <span class="expand-chip-cn cn-only cn-text">客户关系</span>
+                  <span class="expand-chip-cn cn-only cn-text">投资咨询</span>
+                </div>
+              </div>
+              <div>
+                <div class="expand-col-label en-only">Confirmed Placements</div>
+                <div class="expand-col-label-cn cn-only cn-text">已确认录用机构</div>
+                <div class="expand-firms">
+                  <img src="logos/02_Goldman_Sachs.png" alt="Goldman Sachs" class="expand-firm-logo">
+                  <img src="logos/12_Morgan_Stanley.png" alt="Morgan Stanley" class="expand-firm-logo">
+                  <img src="logos/17_UBS.png" alt="UBS" class="expand-firm-logo">
+                  <img src="logos/33_JPMorgan.webp" alt="JPMorgan" class="expand-firm-logo">
+                  <img src="logos/30_Bank_of_America.png" alt="Bank of America" class="expand-firm-logo">
+                  <span class="expand-firm-badge">RBC Dominion</span>
+                  <span class="expand-firm-badge">BMO Nesbitt</span>
+                  <span class="expand-firm-badge">TD Wealth</span>
+                  <span class="expand-firm-badge">Raymond James</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1172,6 +1438,17 @@ footer{background:var(--navy);padding:56px 0 28px}
   window._carouselScrollTo = scrollToCard;
   window._carouselCards = cards;
 })();
+
+function toggleTrack(card) {
+  const isExpanded = card.classList.contains('expanded');
+  document.querySelectorAll('.track-card.expanded').forEach(c => c.classList.remove('expanded'));
+  if (!isExpanded) {
+    card.classList.add('expanded');
+    card.querySelector('.track-toggle').textContent = '+';
+    setTimeout(() => card.scrollIntoView({behavior:'smooth', block:'nearest'}), 50);
+  }
+  document.querySelectorAll('.track-card.expanded .track-toggle').forEach(t => t.textContent = '+');
+}
 
 function scrollCarousel(dir){
   const track=document.getElementById('mentorCarousel');
