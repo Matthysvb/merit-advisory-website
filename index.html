@@ -1320,37 +1320,37 @@ footer{background:var(--navy);padding:56px 0 28px}
         <div class="form-row">
           <div class="fg">
             <label class="fl"><span class="en-only">Parent or Student Name</span><span class="cn-only cn-text fl-cn">姓名（家长或学生）</span></label>
-            <input class="fi" type="text" placeholder="Your name" required>
+            <input class="fi" id="f-name" type="text" placeholder="您的姓名" required>
           </div>
           <div class="fg">
             <label class="fl"><span class="en-only">Email Address</span><span class="cn-only cn-text fl-cn">电子邮箱</span></label>
-            <input class="fi" type="email" placeholder="your@email.com" required>
+            <input class="fi" id="f-email" type="email" placeholder="您的邮箱" required>
           </div>
         </div>
         <div class="form-row">
           <div class="fg">
             <label class="fl"><span class="en-only">Phone / WhatsApp</span><span class="cn-only cn-text fl-cn">联系电话</span></label>
-            <input class="fi" type="tel" placeholder="+1 (000) 000-0000">
+            <input class="fi" id="f-phone" type="tel" placeholder="+1 (000) 000-0000">
           </div>
           <div class="fg">
             <label class="fl"><span class="en-only">Current Stage</span><span class="cn-only cn-text fl-cn">当前阶段</span></label>
-            <select class="fs">
-              <option value="">Select...</option>
-              <option>High School Student</option>
-              <option>University Student</option>
-              <option>Recent Graduate</option>
-              <option>Career Changer</option>
-              <option>Other</option>
+            <select class="fs" id="f-stage">
+              <option value="">请选择...</option>
+              <option>高中生</option>
+              <option>大学生</option>
+              <option>应届毕业生</option>
+              <option>转行人士</option>
+              <option>其他</option>
             </select>
           </div>
         </div>
         <div class="fg">
           <label class="fl"><span class="en-only">Target Firms or Career Track</span><span class="cn-only cn-text fl-cn">目标机构或职业方向</span></label>
-          <input class="fi" type="text" placeholder="e.g. Goldman Sachs, Evercore, Private Equity…">
+          <input class="fi" id="f-firms" type="text" placeholder="例如：高盛、Evercore、私募股权……">
         </div>
         <div class="fg">
           <label class="fl"><span class="en-only">Message (Optional)</span><span class="cn-only cn-text fl-cn">留言（可选）</span></label>
-          <textarea class="ft" placeholder="Tell us about your background, timeline, and what you're trying to achieve…"></textarea>
+          <textarea class="ft" id="f-message" placeholder="请简单介绍您的背景、时间规划及目标……"></textarea>
         </div>
         <button type="submit" class="btn btn-primary f-submit">
           <span class="en-only">Submit Application</span>
@@ -1415,7 +1415,8 @@ footer{background:var(--navy);padding:56px 0 28px}
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="f-copy">© 2026 Merit Advisory. All rights reserved.</div>
+      <div class="f-copy en-only">© 2026 Merit Advisory. All rights reserved.</div>
+      <div class="f-copy cn-only cn-text">© 2026 Merit Advisory. 版权所有。</div>
       <div class="f-guar en-only">★ Every student backed by our offer guarantee</div>
       <div class="f-guar cn-only cn-text" style="font-family:'Noto Sans SC',sans-serif">★ 每位学生均享录用保障</div>
     </div>
@@ -1492,10 +1493,32 @@ function scrollCarousel(dir){
   track.scrollBy({left: dir * cardW, behavior:'smooth'});
 }
 
+const FORM_TEXT = {
+  en: {
+    name: 'Your name', email: 'your@email.com',
+    firms: 'e.g. Goldman Sachs, Evercore, Private Equity…',
+    message: "Tell us about your background, timeline, and what you're trying to achieve…",
+    stage: ['Select...', 'High School Student', 'University Student', 'Recent Graduate', 'Career Changer', 'Other']
+  },
+  cn: {
+    name: '您的姓名', email: '您的邮箱',
+    firms: '例如：高盛、Evercore、私募股权……',
+    message: '请简单介绍您的背景、时间规划及目标……',
+    stage: ['请选择...', '高中生', '大学生', '应届毕业生', '转行人士', '其他']
+  }
+};
+
 function setLang(lang) {
   document.documentElement.setAttribute('data-lang', lang);
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   document.getElementById('btn-cn').classList.toggle('active', lang === 'cn');
+  const t = FORM_TEXT[lang];
+  document.getElementById('f-name').placeholder = t.name;
+  document.getElementById('f-email').placeholder = t.email;
+  document.getElementById('f-firms').placeholder = t.firms;
+  document.getElementById('f-message').placeholder = t.message;
+  const stageSelect = document.getElementById('f-stage');
+  Array.from(stageSelect.options).forEach((opt, i) => { opt.textContent = t.stage[i]; });
 }
 
 function openModal() { document.getElementById('wcModal').classList.add('open'); }
