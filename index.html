@@ -194,18 +194,6 @@ section{padding:96px 0}
 .cdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:all .3s;cursor:pointer}
 .cdot.active{width:20px;border-radius:3px;background:var(--gold)}
 
-/* FOUNDERS */
-#founders{background:var(--white);padding:96px 0}
-.founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:52px}
-.founder-card{background:var(--navy);border-radius:var(--rl);padding:40px 36px;border:1px solid rgba(255,255,255,.1);border-top:3px solid var(--gold);position:relative;overflow:hidden}
-.founder-badge{display:inline-flex;align-items:center;background:rgba(197,160,62,.15);border:1px solid rgba(197,160,62,.35);color:var(--gold);font-size:10px;font-weight:800;padding:4px 10px;border-radius:4px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
-.founder-head{display:flex;align-items:center;gap:18px;margin-bottom:20px}
-.founder-avatar{width:64px;height:64px;border-radius:2px;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:700;color:var(--navy);flex-shrink:0;letter-spacing:0}
-.founder-name{font-size:19px;font-weight:700;color:var(--white);margin-bottom:3px}
-.founder-role{font-size:12.5px;color:var(--gold);font-weight:600}
-.founder-bio{font-size:14px;color:rgba(255,255,255,.65);line-height:1.75}
-.founder-bio-cn{font-family:'Noto Sans SC',sans-serif;font-size:14px;color:rgba(255,255,255,.65);line-height:1.9}
-@media(max-width:900px){.founders-grid{grid-template-columns:1fr}}
 
 /* OFFER BOOK */
 #offerbook{background:var(--cream);padding:96px 0}
@@ -328,7 +316,6 @@ footer{background:var(--navy);padding:56px 0 28px}
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="#founders"><span class="en-only">Founders</span><span class="cn-only cn-text">创始团队</span></a></li>
       <li><a href="#tracks"><span class="en-only">Career Tracks</span><span class="cn-only cn-text">职业方向</span></a></li>
       <li><a href="#mentors"><span class="en-only">Mentors</span><span class="cn-only cn-text">导师团队</span></a></li>
       <li><a href="#howitworks"><span class="en-only">How It Works</span><span class="cn-only cn-text">如何运作</span></a></li>
@@ -524,69 +511,6 @@ footer{background:var(--navy);padding:56px 0 28px}
         <div class="num-big">100%</div>
         <div class="num-label en-only">Offer Guarantee</div>
         <div class="num-label-cn cn-only cn-text">录用保障</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOUNDERS -->
-<section id="founders">
-  <div class="container">
-    <div class="eyebrow en-only">The People Behind Merit</div>
-    <div class="eyebrow cn-only cn-text">创始团队</div>
-    <div class="s-title en-only fade-in">Two Founders. Zero Anonymity.</div>
-    <div class="s-title-cn cn-only cn-text fade-in">两位创始人，全程亲自负责。</div>
-    <div class="gold-rule"></div>
-    <p class="tracks-intro en-only">You're not handed off to a rotating pool of first-name-only coaches. Every family works directly with the two people who run this firm.</p>
-    <p class="tracks-intro-cn cn-only cn-text">您对接的不是一批只留姓氏首字母的轮岗导师，而是这家机构真正的两位负责人。</p>
-    <div class="founders-grid">
-      <div class="founder-card fade-in">
-        <div class="founder-badge en-only">Co-Founder · Head of Mentorship</div>
-        <div class="founder-badge cn-only cn-text" style="font-family:'Noto Sans SC',sans-serif">联合创始人 · 导师团队负责人</div>
-        <div class="founder-head">
-          <div class="founder-avatar">JS</div>
-          <div>
-            <div class="founder-name">James Sterling</div>
-            <div class="founder-role en-only">Goldman Sachs &amp; Evercore, M&amp;A</div>
-            <div class="founder-role cn-only cn-text" style="font-family:'Noto Sans SC',sans-serif">高盛与Evercore并购业务背景</div>
-          </div>
-        </div>
-        <ul class="mentor-achievements en-only">
-          <li>Advised on $18B+ in completed M&amp;A transactions across TMT, healthcare and industrials at Goldman Sachs and Evercore</li>
-          <li>Wharton School, University of Pennsylvania — recruited directly into Goldman Sachs' IBD analyst program</li>
-          <li>Fastest Analyst-to-Associate promotion in his Evercore group's history</li>
-          <li>Personally led firm recruiting for two consecutive summer analyst cycles; reviewed 400+ applications</li>
-        </ul>
-        <ul class="mentor-achievements cn-only cn-text">
-          <li>在高盛与Evercore主导超过180亿美元已完成并购交易，覆盖科技传媒、医疗健康及工业领域</li>
-          <li>宾夕法尼亚大学沃顿商学院毕业，直接获聘高盛投行部分析师项目</li>
-          <li>在Evercore所在团队创下分析师至副总裁最快晋升纪录</li>
-          <li>连续两届主导公司校园招聘，审阅超过400份候选人申请</li>
-        </ul>
-      </div>
-      <div class="founder-card fade-in">
-        <div class="founder-badge en-only">Co-Founder · CEO</div>
-        <div class="founder-badge cn-only cn-text" style="font-family:'Noto Sans SC',sans-serif">联合创始人 · 首席执行官</div>
-        <div class="founder-head">
-          <div class="founder-avatar">EC</div>
-          <div>
-            <div class="founder-name">Ethan Cole</div>
-            <div class="founder-role en-only">Blackstone &amp; KKR, Private Equity</div>
-            <div class="founder-role cn-only cn-text" style="font-family:'Noto Sans SC',sans-serif">黑石与KKR私募股权背景</div>
-          </div>
-        </div>
-        <ul class="mentor-achievements en-only">
-          <li>Closed $2.1B+ in leveraged buyout and growth equity transactions across consumer and technology at Blackstone and KKR</li>
-          <li>Harvard University, Economics — National Merit Scholar</li>
-          <li>Led due diligence on 12+ live deal processes before age 24</li>
-          <li>Built the firm's operating and client-delivery infrastructure from the ground up</li>
-        </ul>
-        <ul class="mentor-achievements cn-only cn-text">
-          <li>在黑石与KKR主导完成超过21亿美元杠杆收购及成长型股权交易，覆盖消费与科技领域</li>
-          <li>哈佛大学经济学专业毕业，国家优秀学生奖学金获得者</li>
-          <li>24岁前主导超过12个实际交易项目的尽职调查</li>
-          <li>从零搭建公司运营与客户交付体系</li>
-        </ul>
       </div>
     </div>
   </div>
@@ -1394,7 +1318,6 @@ footer{background:var(--navy);padding:56px 0 28px}
         <div class="f-col-title en-only">Quick Links</div>
         <div class="f-col-title cn-only cn-text" style="font-family:'Noto Sans SC',sans-serif">快速导航</div>
         <ul class="f-links">
-          <li><a href="#founders"><span class="en-only">Founders</span><span class="cn-only cn-text">创始团队</span></a></li>
           <li><a href="#tracks"><span class="en-only">Career Tracks</span><span class="cn-only cn-text">职业方向</span></a></li>
           <li><a href="#howitworks"><span class="en-only">How It Works</span><span class="cn-only cn-text">流程说明</span></a></li>
           <li><a href="#numbers"><span class="en-only">Our Results</span><span class="cn-only cn-text">成果数据</span></a></li>
