@@ -214,6 +214,12 @@ section{padding:96px 0}
 .offerbook-cta{margin-top:24px;width:100%;justify-content:center;padding:13px}
 @media(max-width:900px){.offerbook-grid{grid-template-columns:1fr}}
 
+/* FREE DIAGNOSTIC */
+#demo{background:var(--white);padding:96px 0}
+.demo-card{max-width:760px;margin:0 auto;text-align:center;background:var(--off);border:1px solid var(--border);border-top:2px solid var(--gold);padding:56px 48px}
+.demo-cta{margin-top:32px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+@media(max-width:640px){.demo-card{padding:40px 24px}}
+
 /* HOW IT WORKS */
 #howitworks{background:var(--cream);padding:96px 0}
 .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
@@ -233,7 +239,7 @@ section{padding:96px 0}
 @media(max-width:540px){.steps-grid{grid-template-columns:1fr}}
 
 /* GUARANTEE */
-#guarantee{background:var(--navy);padding:100px 0}
+#guarantee{background:linear-gradient(rgba(10,34,64,.88),rgba(10,34,64,.93)),url(assets/cities-banner.jpg);background-size:cover;background-position:center;padding:100px 0}
 .guar-inner{max-width:800px;margin:0 auto;text-align:center}
 .guar-title{font-family:'Arial',sans-serif;font-size:clamp(2rem,3.5vw,3.2rem);font-weight:800;color:var(--white);margin-bottom:8px;letter-spacing:-.04em}
 .guar-title-cn{font-family:'Arial','PingFang SC','Microsoft YaHei',sans-serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:rgba(255,255,255,.95);margin-bottom:24px;letter-spacing:0}
@@ -318,6 +324,7 @@ footer{background:var(--navy);padding:56px 0 28px}
     <ul class="nav-links">
       <li><a href="#tracks"><span class="en-only">Career Tracks</span><span class="cn-only cn-text">职业方向</span></a></li>
       <li><a href="#mentors"><span class="en-only">Mentors</span><span class="cn-only cn-text">导师团队</span></a></li>
+      <li><a href="#demo"><span class="en-only">Free Session</span><span class="cn-only cn-text">免费咨询</span></a></li>
       <li><a href="#howitworks"><span class="en-only">How It Works</span><span class="cn-only cn-text">如何运作</span></a></li>
       <li><a href="#guarantee"><span class="en-only">Guarantee</span><span class="cn-only cn-text">保障</span></a></li>
       <li><a href="#contact"><span class="en-only">Apply</span><span class="cn-only cn-text">申请</span></a></li>
@@ -1126,6 +1133,31 @@ footer{background:var(--navy);padding:56px 0 28px}
   </div>
 </section>
 
+<!-- FREE DIAGNOSTIC -->
+<section id="demo">
+  <div class="container">
+    <div class="demo-card fade-in">
+      <div class="eyebrow en-only" style="text-align:center">Try Before You Apply</div>
+      <div class="eyebrow cn-only cn-text" style="text-align:center;font-family:'Noto Sans SC',sans-serif">先体验，再申请</div>
+      <div class="s-title en-only center">Book a Free 1:1 Diagnostic Session.</div>
+      <div class="s-title-cn cn-only cn-text center">预约一次免费一对一诊断咨询。</div>
+      <div class="gold-rule" style="margin:20px auto"></div>
+      <p class="s-sub en-only" style="margin-left:auto;margin-right:auto">30 minutes with a real mentor — a live mock question, honest feedback on where you actually stand, and a clear look at what the program is like. No cost, no obligation.</p>
+      <p class="s-sub-cn cn-only cn-text" style="margin-left:auto;margin-right:auto">与真实导师进行30分钟一对一交流——现场模拟提问、关于您当前水平的坦诚反馈，以及项目实际运作方式的直观展示。全程免费，无任何强制要求。</p>
+      <div class="demo-cta">
+        <a href="#contact" class="btn btn-primary btn-lg">
+          <span class="en-only">Book Your Free Session</span>
+          <span class="cn-only cn-text">预约免费咨询</span>
+        </a>
+        <button class="btn btn-lg btn-wechat" onclick="openModal()">
+          <span class="en-only">Open WeChat</span>
+          <span class="cn-only cn-text">微信咨询</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section id="howitworks">
   <div class="container">
@@ -1319,6 +1351,7 @@ footer{background:var(--navy);padding:56px 0 28px}
         <div class="f-col-title cn-only cn-text" style="font-family:'Noto Sans SC',sans-serif">快速导航</div>
         <ul class="f-links">
           <li><a href="#tracks"><span class="en-only">Career Tracks</span><span class="cn-only cn-text">职业方向</span></a></li>
+          <li><a href="#demo"><span class="en-only">Free Session</span><span class="cn-only cn-text">免费咨询</span></a></li>
           <li><a href="#howitworks"><span class="en-only">How It Works</span><span class="cn-only cn-text">流程说明</span></a></li>
           <li><a href="#numbers"><span class="en-only">Our Results</span><span class="cn-only cn-text">成果数据</span></a></li>
           <li><a href="#guarantee"><span class="en-only">The Guarantee</span><span class="cn-only cn-text">录用保障</span></a></li>
